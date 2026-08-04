@@ -51,7 +51,7 @@ for sp in sl.shapes:
         algn=[p.get('algn') for p in el.iter(qn('a:pPr'))]
         al=algn[0] if algn else 'l'
         fs=pt*0.86
-        cpl=max(6,int(CX*72/(fs*0.55)))
+        cpl=max(6,int(CX*72/(fs*(0.62 if bold else 0.55))))
         lines=[]
         for L in txt.split('\n'): lines+= textwrap.wrap(L,cpl) or ['']
         disp='\n'.join(lines)
